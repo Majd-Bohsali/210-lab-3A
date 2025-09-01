@@ -33,6 +33,14 @@ Restaurant returnRestaurantStruct() {
     return tempRestaurant; 
 }
 
+// printRestaurantDetails() displays all restaurant details 
+// arguments: Restaurant object to display content of 
+// returns: void (nothing)
+void printRestaurantDetails(Restaurant rest) {
+    
+
+}
+
 int main() {
     returnRestaurantStruct();
     return 0; 

@@ -37,11 +37,16 @@ Restaurant returnRestaurantStruct() {
 // arguments: Restaurant object to display content of 
 // returns: void (nothing)
 void printRestaurantDetails(Restaurant rest) {
-    
-
+    cout << endl << rest.name << endl; 
+    cout << "---------------------" << endl; 
+    cout << "Address: " << rest.address << endl;
+    cout << "Opening Hours: " << rest.openHours << endl; 
+    cout << "Capacity: " << rest.carryingCapacity << endl;
+    cout << "Rating: " << rest.avgRating << endl << endl; 
 }
 
 int main() {
-    returnRestaurantStruct();
+    Restaurant restaurant1 = returnRestaurantStruct();
+    printRestaurantDetails(restaurant1);
     return 0; 
 }

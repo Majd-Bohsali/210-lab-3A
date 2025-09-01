@@ -14,26 +14,23 @@ struct Restaurant {
     string openHours;   
 };
 
-Restaurant returnRestarantStruct() { 
+Restaurant returnRestaurantStruct() { 
     Restaurant tempRestaurant; 
     cout << "Enter the Restaurant's name: ";
     getline(cin, tempRestaurant.name);
     cout << "Enter the Restaurant's address: ";
     getline(cin, tempRestaurant.address);
+    cout << "What are the restaurant's opening hours: ";
+    getline(cin, tempRestaurant.openHours);
     cout << "What is the carrying capacity of the restaurant: "; 
     cin >> tempRestaurant.carryingCapacity; 
     cout << "What is the average rating score of the restaurant: "; 
     cin >> tempRestaurant.avgRating; 
-    cout << "What are the restaurant's opening hours: ";
-    getline(cin, tempRestaurant.openHours);
-    // checks outputs: 
-    cout << tempRestaurant.name << ", " << tempRestaurant.address << ", " 
-        << tempRestaurant.carryingCapacity << ", " << tempRestaurant.avgRating << ", ", tempRestaurant.openHours;
 
     return tempRestaurant; 
 }
 
 int main() {
-    returnRestarantStruct();
+    returnRestaurantStruct();
     return 0; 
 }

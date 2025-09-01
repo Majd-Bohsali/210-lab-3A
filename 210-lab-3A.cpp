@@ -14,6 +14,9 @@ struct Restaurant {
     string openHours;   
 };
 
+// returnRestaurantStruct() creates a Restaurant struct and collects attribute values from user
+// arguments: none
+// returns: a populated Restaurant struct
 Restaurant returnRestaurantStruct() { 
     Restaurant tempRestaurant; 
     cout << "Enter the Restaurant's name: ";

@@ -18,7 +18,14 @@ Restaurant returnRestarantStruct() {
     Restaurant tempRestaurant; 
     cout << "Enter the Restaurant's name: ";
     getline(cin, tempRestaurant.name);
-    cout << tempRestaurant.name; 
+    cout << "Enter the Restaurant's address: ";
+    getline(cin, tempRestaurant.address);
+    cout << "What is the carrying capacity of the restaurant: "; 
+    cin >> tempRestaurant.carryingCapacity; 
+
+    // checks outputs: 
+    cout << tempRestaurant.name << " " << tempRestaurant.address << " " << tempRestaurant.carryingCapacity;
+
     return tempRestaurant; 
 }
 

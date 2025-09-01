@@ -22,15 +22,18 @@ Restaurant returnRestarantStruct() {
     getline(cin, tempRestaurant.address);
     cout << "What is the carrying capacity of the restaurant: "; 
     cin >> tempRestaurant.carryingCapacity; 
-
+    cout << "What is the average rating score of the restaurant: "; 
+    cin >> tempRestaurant.avgRating; 
+    cout << "What are the restaurant's opening hours: ";
+    getline(cin, tempRestaurant.openHours);
     // checks outputs: 
-    cout << tempRestaurant.name << " " << tempRestaurant.address << " " << tempRestaurant.carryingCapacity;
+    cout << tempRestaurant.name << ", " << tempRestaurant.address << ", " 
+        << tempRestaurant.carryingCapacity << ", " << tempRestaurant.avgRating << ", ", tempRestaurant.openHours;
 
     return tempRestaurant; 
 }
 
-int main() { 
-    cout << "Hello World" << endl; 
+int main() {
     returnRestarantStruct();
     return 0; 
 }

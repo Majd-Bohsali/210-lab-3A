@@ -31,6 +31,8 @@ Restaurant returnRestaurantStruct() {
     cin >> tempRestaurant.carryingCapacity; 
     while (tempRestaurant.carryingCapacity <= 0) { 
         cout << "Invalid input, please enter a positive number: ";
+        cin.clear();
+        cin.ignore(100, '\n');
         cin >> tempRestaurant.carryingCapacity; 
     }
 
@@ -39,9 +41,10 @@ Restaurant returnRestaurantStruct() {
     cin >> tempRestaurant.avgRating; 
     while (tempRestaurant.avgRating <= 0) {
         cout << "Invalid input, please enter a positive number: ";
+        cin.clear();
+        cin.ignore(100, '\n');
         cin >> tempRestaurant.avgRating; 
     } 
-
 
     return tempRestaurant; 
 }
@@ -50,11 +53,12 @@ Restaurant returnRestaurantStruct() {
 // arguments: Restaurant object to display content of 
 // returns: void (nothing)
 void printRestaurantDetails(Restaurant rest) {
-    cout << endl << rest.name << endl;  
+    cout << endl << "Restaurant Details: " << endl; 
+    cout << "Name: " << rest.name << endl;  
     cout << "Address: " << rest.address << endl;
     cout << "Opening Hours: " << rest.openHours << endl; 
     cout << "Capacity: " << rest.carryingCapacity << endl;
-    cout << "Rating: " << rest.avgRating << endl << endl; 
+    cout << "Rating: " << rest.avgRating << endl; 
 }
 
 int main() {

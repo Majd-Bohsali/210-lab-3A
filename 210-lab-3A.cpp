@@ -25,10 +25,23 @@ Restaurant returnRestaurantStruct() {
     getline(cin, tempRestaurant.address);
     cout << "What are the restaurant's opening hours: ";
     getline(cin, tempRestaurant.openHours);
+
+    // only allows carrying capacity to be numbers
     cout << "What is the carrying capacity of the restaurant: "; 
     cin >> tempRestaurant.carryingCapacity; 
+    while (tempRestaurant.carryingCapacity <= 0) { 
+        cout << "Invalid input, please enter a positive number: ";
+        cin >> tempRestaurant.carryingCapacity; 
+    }
+
+    // only allows the average rating to be a positive number
     cout << "What is the average rating score of the restaurant: "; 
     cin >> tempRestaurant.avgRating; 
+    while (tempRestaurant.avgRating <= 0) {
+        cout << "Invalid input, please enter a positive number: ";
+        cin >> tempRestaurant.avgRating; 
+    } 
+
 
     return tempRestaurant; 
 }
@@ -37,8 +50,7 @@ Restaurant returnRestaurantStruct() {
 // arguments: Restaurant object to display content of 
 // returns: void (nothing)
 void printRestaurantDetails(Restaurant rest) {
-    cout << endl << rest.name << endl; 
-    cout << "---------------------" << endl; 
+    cout << endl << rest.name << endl;  
     cout << "Address: " << rest.address << endl;
     cout << "Opening Hours: " << rest.openHours << endl; 
     cout << "Capacity: " << rest.carryingCapacity << endl;

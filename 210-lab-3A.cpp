@@ -70,7 +70,6 @@ void printRestaurantDetails(Restaurant rest) {
 }
 
 int main() {
-    
     for (int i = 0; i < 4; i++) { 
         cout << "Enter details for Restaurant " << i + 1 << endl; 
         Restaurant restaurant1 = returnRestaurantStruct();

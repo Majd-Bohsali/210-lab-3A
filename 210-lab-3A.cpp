@@ -18,6 +18,7 @@ struct Restaurant {
 // arguments: none
 // returns: a populated Restaurant struct
 Restaurant returnRestaurantStruct() { 
+    const int CHAR_SKIP = 100; 
     Restaurant tempRestaurant; 
     cout << "Enter the Restaurant's name: ";
     getline(cin, tempRestaurant.name);
@@ -26,15 +27,21 @@ Restaurant returnRestaurantStruct() {
     cout << "What are the restaurant's opening hours: ";
     getline(cin, tempRestaurant.openHours);
 
-    // only allows carrying capacity to be numbers
+    // only allows carrying capacity to be positive integers
     cout << "What is the carrying capacity of the restaurant: "; 
+    double tempCarryingCpactiyInput; 
     cin >> tempRestaurant.carryingCapacity; 
-    while (tempRestaurant.carryingCapacity <= 0) { 
-        cout << "Invalid input, please enter a positive number: ";
+    while (tempCarryingCpactiyInput <= 0 || tempCarryingCpactiyInput != (int)tempCarryingCpactiyInput) { 
+        cout << "Invalid input, please enter a positive integer: ";
         cin.clear();
-        cin.ignore(100, '\n');
-        cin >> tempRestaurant.carryingCapacity; 
+        cin.ignore(CHAR_SKIP, '\n');
+        cin >> tempCarryingCpactiyInput; 
     }
+    tempRestaurant.carryingCapacity = (int)tempCarryingCpactiyInput;
+    // clears any extra input
+    cin.clear();
+    cin.ignore(CHAR_SKIP, '\n');
+
 
     // only allows the average rating to be a positive number
     cout << "What is the average rating score of the restaurant: "; 
@@ -42,7 +49,7 @@ Restaurant returnRestaurantStruct() {
     while (tempRestaurant.avgRating <= 0) {
         cout << "Invalid input, please enter a positive number: ";
         cin.clear();
-        cin.ignore(100, '\n');
+        cin.ignore(CHAR_SKIP, '\n');
         cin >> tempRestaurant.avgRating; 
     } 
 
@@ -58,11 +65,15 @@ void printRestaurantDetails(Restaurant rest) {
     cout << "Address: " << rest.address << endl;
     cout << "Opening Hours: " << rest.openHours << endl; 
     cout << "Capacity: " << rest.carryingCapacity << endl;
-    cout << "Rating: " << rest.avgRating << endl; 
+    cout << "Rating: " << rest.avgRating << endl << endl; 
 }
 
 int main() {
-    Restaurant restaurant1 = returnRestaurantStruct();
-    printRestaurantDetails(restaurant1);
+    
+    for (int i = 0; i < 4; i++) { 
+        cout << "Enter details for Restaurant " << i + 1 << endl; 
+        Restaurant restaurant1 = returnRestaurantStruct();
+        printRestaurantDetails(restaurant1);
+    }
     return 0; 
 }

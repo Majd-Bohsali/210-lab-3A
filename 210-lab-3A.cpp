@@ -11,7 +11,7 @@ struct Restaurant {
     string address; 
     int carryingCapacity; 
     float avgRating; 
-    string openHours;   
+    string cuisine;   
 };
 
 // returnRestaurantStruct() creates a Restaurant struct and collects attribute values from user
@@ -24,8 +24,8 @@ Restaurant returnRestaurantStruct() {
     getline(cin, tempRestaurant.name);
     cout << "Enter the Restaurant's address: ";
     getline(cin, tempRestaurant.address);
-    cout << "What are the restaurant's opening hours: ";
-    getline(cin, tempRestaurant.openHours);
+    cout << "What are the restaurant's cuisine: ";
+    getline(cin, tempRestaurant.cuisine);
 
     // only allows carrying capacity to be positive integers
     cout << "What is the carrying capacity of the restaurant: "; 
@@ -64,7 +64,7 @@ void printRestaurantDetails(Restaurant rest) {
     cout << endl << "Restaurant Details: " << endl; 
     cout << "Name: " << rest.name << endl;  
     cout << "Address: " << rest.address << endl;
-    cout << "Opening Hours: " << rest.openHours << endl; 
+    cout << "Cuisine: " << rest.cuisine << endl; 
     cout << "Capacity: " << rest.carryingCapacity << endl;
     cout << "Rating: " << rest.avgRating << endl << endl; 
 }

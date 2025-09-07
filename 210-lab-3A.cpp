@@ -41,7 +41,6 @@ Restaurant returnRestaurantStruct() {
     // clears any extra input
     cin.ignore(CHAR_SKIP, '\n');
 
-
     // only allows the average rating to be a positive number
     cout << "What is the average rating score of the restaurant: "; 
     cin >> tempRestaurant.avgRating; 

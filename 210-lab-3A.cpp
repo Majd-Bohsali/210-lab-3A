@@ -30,7 +30,7 @@ Restaurant returnRestaurantStruct() {
     // only allows carrying capacity to be positive integers
     cout << "What is the carrying capacity of the restaurant: "; 
     double tempCarryingCpactiyInput; 
-    cin >> tempRestaurant.carryingCapacity; 
+    cin >> tempCarryingCpactiyInput; 
     while (tempCarryingCpactiyInput <= 0 || tempCarryingCpactiyInput != (int)tempCarryingCpactiyInput) { 
         cout << "Invalid input, please enter a positive integer: ";
         cin.clear();
@@ -39,7 +39,6 @@ Restaurant returnRestaurantStruct() {
     }
     tempRestaurant.carryingCapacity = (int)tempCarryingCpactiyInput;
     // clears any extra input
-    cin.clear();
     cin.ignore(CHAR_SKIP, '\n');
 
 
@@ -52,6 +51,8 @@ Restaurant returnRestaurantStruct() {
         cin.ignore(CHAR_SKIP, '\n');
         cin >> tempRestaurant.avgRating; 
     } 
+    // clears any extra input
+    cin.ignore(CHAR_SKIP, '\n');
 
     return tempRestaurant; 
 }
